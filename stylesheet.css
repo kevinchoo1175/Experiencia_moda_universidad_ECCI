@@ -1,0 +1,256 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO EDITORIAL (PALETA EMERALD)
+   ========================================================================== */
+:root {
+    --emerald-dark: #092216;      /* Verde oscuro profundo principal */
+    --emerald-accent: #153d29;    /* Verde secundario para bloques */
+    --gold-premium: #c4a747;      /* Acento dorado de alta costura */
+    --cream-light: #f6f4ee;       /* Fondo crema suave editorial */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --transition-premium: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   2. AJUSTES GLOBALES Y TIPOGRAFÍA
+   ========================================================================== */
+body {
+    background-color: var(--cream-light);
+    color: var(--emerald-dark);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+}
+
+.logo, .hero-title, .section-title, .title-font {
+    font-family: var(--font-serif) !important;
+}
+
+/* Utilidades Customizadas */
+.tracking-1 { letter-spacing: 1px; }
+.tracking-2 { letter-spacing: 2px; }
+.tracking-3 { letter-spacing: 4px; }
+.text-emerald { color: var(--emerald-dark); }
+.text-accent { color: var(--gold-premium); }
+.bg-cream { background-color: var(--cream-light); }
+.bg-light-section { background-color: #fcfbfa; }
+.section-padding { padding-top: 100px; padding-bottom: 100px; }
+
+/* ==========================================================================
+   3. COMPONENTES: NAVBAR (FONDO VERDE OSCURO)
+   ========================================================================== */
+.custom-navbar {
+    background-color: rgba(9, 34, 22, 0.98) !important; /* Base Esmeralda Sólida */
+    border-bottom: 1px solid rgba(196, 167, 71, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.custom-navbar .logo {
+    color: var(--gold-premium) !important;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.custom-navbar .nav-link {
+    color: #e9e5db !important;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    position: relative;
+    transition: var(--transition-premium);
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: var(--gold-premium) !important;
+}
+
+.custom-toggler {
+    filter: invert(1) sepia(50%) saturate(1000%) hue-rotate(10deg);
+}
+
+/* ==========================================================================
+   4. COMPONENTES: HERO SECCIÓN (TINTE VERDE SOBRE LA IMAGEN)
+   ========================================================================== */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(9, 34, 22, 0.75), rgba(9, 34, 22, 0.8)), /* Filtro Verde Esmeralda */
+                url('https://images.unsplash.com/photo-1549064482-6779ba329226?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: var(--gold-premium);
+}
+
+.btn-outline-gold {
+    border: 1px solid var(--gold-premium);
+    color: #fff;
+    font-size: 0.75rem;
+    transition: var(--transition-premium);
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--gold-premium);
+    color: var(--emerald-dark);
+    border-color: var(--gold-premium);
+}
+
+/* ==========================================================================
+   5. COMPONENTES: PERFIL, INVITADO Y TESTIMONIOS
+   ========================================================================== */
+.profile-frame {
+    padding: 15px;
+    border: 1px solid rgba(196, 167, 71, 0.3);
+}
+
+.profile-frame::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid var(--gold-premium);
+    border-left: 1px solid var(--gold-premium);
+}
+
+.frame-gold {
+    border: 1px solid rgba(196, 167, 71, 0.6) !important;
+}
+
+.frame-gold::before {
+    border-top: 1px solid var(--emerald-dark) !important;
+    border-left: 1px solid var(--emerald-dark) !important;
+}
+
+.profile-img {
+    height: 520px;
+}
+
+.lead-editorial {
+    line-height: 1.9;
+}
+
+.custom-blockquote {
+    border-left-color: var(--gold-premium) !important;
+    border-left-width: 3px !important;
+}
+
+.custom-blockquote p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   6. COMPONENTES: GALERÍA DE IMÁGENES (FONDOS ESMERALDA)
+   ========================================================================== */
+.img-box {
+    height: 480px;
+    background-color: var(--emerald-dark);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 34, 22, 0.9); /* Capa interna Verde al pasar el mouse */
+    opacity: 0;
+    transition: var(--transition-premium);
+    padding: 20px;
+}
+
+.img-overlay span {
+    color: var(--cream-light);
+    transform: translateY(20px);
+    transition: var(--transition-premium);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Efectos Hover de la Galería */
+.gallery-item:hover .img-box img {
+    transform: scale(1.04);
+}
+
+.gallery-item:hover .img-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .img-overlay span {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   7. TARJETAS DE INFORMACIÓN
+   ========================================================================== */
+.info-card {
+    background-color: #fff;
+    border-color: rgba(9, 34, 22, 0.08) !important;
+    transition: var(--transition-premium);
+}
+
+.info-card:hover {
+    border-color: var(--gold-premium) !important;
+    background-color: #faf9f6;
+    transform: translateY(-5px);
+}
+
+.btn-outline-dark {
+    border: 1px solid var(--emerald-dark);
+    color: var(--emerald-dark);
+    font-size: 0.7rem;
+    font-family: var(--font-sans);
+    transition: var(--transition-premium);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--emerald-dark);
+    color: #fff;
+    border-color: var(--emerald-dark);
+}
+
+/* ==========================================================================
+   8. ANIMACIONES Y ESTADOS DINÁMICOS
+   ========================================================================== */
+.open-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.3s forwards 0.2s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. FOOTER (BLOQUE VERDE OSCURO)
+   ========================================================================== */
+.main-footer {
+    background-color: var(--emerald-dark);
+    color: rgba(246, 244, 238, 0.6);
+}

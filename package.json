@@ -1,0 +1,25 @@
+{
+  "name": "experiencia_moda_universidad_ecci",
+  "version": "1.0.0",
+  "description": "Esta pagina web se basa en mi experiencia sobre la moda que se realizo en la universidad ecci",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinchoo1175/Experiencia_moda_universidad_ECCI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kevinchoo1175/Experiencia_moda_universidad_ECCI/issues"
+  },
+  "homepage": "https://github.com/kevinchoo1175/Experiencia_moda_universidad_ECCI#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  }
+}
